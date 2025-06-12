@@ -1,0 +1,205 @@
+@media (max-width: 767px) {
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: rgb(113, 77, 245);
+        width: 100%;
+        height: 100%;
+    }
+
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 14vh;
+        margin-top: 2vh;
+        margin-bottom: -1.5vh;
+    }
+
+    #spotify {
+        height: 100%;
+        width: 90vw;
+    }
+
+    span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 5vh;
+        width: 30vw;
+        margin: auto;
+        text-shadow: 3px 2px 12px rgba(0, 0, 0, 0.418);
+    }
+
+    p {
+        color: white;
+        font-family: sans-serif;
+        font-size: 2.1vh;
+        font-weight: bold;
+    }
+
+    .imagem-container {
+        position: absolute;
+        top: 51%;
+        left: 50%;
+        width: calc(60vh * 9 / 16);
+        height: 60vh;
+        transform: translate(-50%, -50%);
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 3px 2px 12px rgba(0, 0, 0, 0.418);
+        margin-top: 2vh;
+    }
+
+    .imagem-container img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transition: opacity 0.8s ease;
+    }
+
+    .imagem-container img.active {
+        opacity: 1;
+    }
+
+    .tempo-container {
+        position: absolute;
+        top: 88%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: sans-serif;
+        font-size: 1.8vh;
+        color: white;
+        text-align: center;
+    }
+
+    .heart {
+        position: absolute;
+        top: -50px;
+        font-size: 24px;
+        color: #ff69b4;
+        animation: fall linear forwards;
+    }
+
+    @keyframes fall {
+        0% {
+            transform: translateY(0) rotate(0deg);
+            ;
+            opacity: 1;
+        }
+
+        80% {
+            opacity: 0.2;
+        }
+
+        100% {
+            transform: translateY(60vh) rotate(135deg);
+            opacity: 0;
+        }
+    }
+}
+
+@media (min-width: 767px) {
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: rgb(113, 77, 245);
+        width: 100%;
+        height: 100%;
+    }
+
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 14vh;
+        margin-top: 1vh;
+        margin-bottom: -2vh;
+    }
+
+    #spotify {
+        height: 12vh;
+        width: 70vw;
+    }
+
+    span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 2vh;
+        width: 30vw;
+        margin: auto;
+        text-shadow: 3px 2px 12px rgba(0, 0, 0, 0.418);
+    }
+
+    p {
+        color: white;
+        font-family: sans-serif;
+        font-size: 2.1vh;
+        font-weight: bold;
+    }
+
+    .imagem-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: calc(70vh * 9 / 16);
+        height: 70vh;
+        transform: translate(-50%, -50%);
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 3px 2px 12px rgba(0, 0, 0, 0.418);
+        margin-top: 2vh;
+    }
+
+    .imagem-container img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transition: opacity 0.8s ease;
+    }
+
+    .imagem-container img.active {
+        opacity: 1;
+    }
+
+    .tempo-container {
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: sans-serif;
+        font-size: 2.1vh;
+        color: white;
+        text-align: center;
+    }
+
+    .heart {
+        position: absolute;
+        top: -50px;
+        font-size: 24px;
+        color: #ff69b4;
+        animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+        0% {
+            transform: translateY(0) rotate(0deg);
+            ;
+            opacity: 1;
+        }
+
+        80% {
+            opacity: 0.2;
+        }
+
+        100% {
+            transform: translateY(60vh) rotate(135deg);
+            opacity: 0;
+        }
+    }
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 1 namorado</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="imgs/coracao.ico" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <iframe style="border-radius:12px"
+            src="https://open.spotify.com/embed/playlist/03MJ5SFEjUce0fvQFQNR84?utm_source=generator" width="100%"
+            height="152" frameBorder="0" allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"
+            id="spotify"></iframe>
+    </header>
+    <span>
+        <p class="n">Eu te amo ❤</p>
+    </span>
+    <div class="imagem-container">
+        <img src="imgs/1.jpg" class="active" alt="1">
+        <img src="imgs/2.jpg" alt="2">
+        <img src="imgs/3.jpg" alt="3">
+        <img src="imgs/4.jpg" alt="4">
+        <img src="imgs/5.jpg" alt="5">
+        <img src="imgs/6.jpg" alt="6">
+        <img src="imgs/7.jpg" alt="7">
+        <img src="imgs/8.jpg" alt="8">
+        <img src="imgs/9.jpg" alt="9">
+        <img src="imgs/10.jpg" alt="10">
+        <img src="imgs/11.jpg" alt="11">
+        <img src="imgs/13.jpg" alt="13">
+        <img src="imgs/14.jpg" alt="14">
+        <img src="imgs/15.jpg" alt="15">
+    </div>
+    <div class="tempo-container" id="tempo-namoro">
+
+    </div>
+
+    <script>
+        const imagens = document.querySelectorAll('.imagem-container img');
+        let index = 0;
+
+        setInterval(() => {
+            imagens[index].classList.remove('active');
+            index = (index + 1) % imagens.length;
+            imagens[index].classList.add('active');
+        }, 4000);
+
+        const tempoEl = document.getElementById('tempo-namoro');
+        const dataInicio = new Date(2025, 5, 13);
+
+        function atualizarTempo() {
+            const agora = new Date();
+            let diff = agora - dataInicio;
+
+            let segundos = Math.floor(diff / 1000);
+            let minutos = Math.floor(segundos / 60);
+            let horas = Math.floor(minutos / 60);
+            let dias = Math.floor(horas / 24);
+            let meses = Math.floor(dias / 30.4375);
+            let anos = Math.floor(meses / 12);
+
+
+            segundos = segundos % 60;
+            minutos = minutos % 60;
+            horas = horas % 24;
+            dias = dias % 30.4375;
+            meses = meses % 12;
+
+            tempoEl.innerHTML = `Estamos namorando há ${Math.floor(anos)} anos, ${Math.floor(meses)} meses, ${Math.floor(dias)} dias, ${Math.floor(horas)} horas, ${Math.floor(minutos)} minutos e ${Math.floor(segundos)} segundos.`;
+        }
+
+        atualizarTempo();
+        setInterval(atualizarTempo, 1000);
+
+
+        function criarCoracao() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = Math.random() * 93 + "vw";
+            heart.style.animationDuration = (3 + Math.random() * 2) + "s";
+            heart.innerHTML = "❤️";
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 7000);
+        }
+        setInterval(criarCoracao, 800); 
+    </script>
+</body>
+
+</html>
