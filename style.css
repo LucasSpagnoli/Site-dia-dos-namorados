@@ -117,7 +117,7 @@
         align-items: center;
         height: 14vh;
         margin-top: 1vh;
-        margin-bottom: -1.5vh;
+        margin-bottom: -1.2vh;
     }
 
     #spotify {
@@ -133,7 +133,6 @@
         width: 30vw;
         margin: auto;
         text-shadow: 3px 2px 12px rgba(0, 0, 0, 0.418);
-        margin-top: 0.2vh;
     }
 
     p {
